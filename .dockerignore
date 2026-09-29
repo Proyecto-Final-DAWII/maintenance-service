@@ -1,0 +1,19 @@
+# Version control and IDE metadata
+.git/
+.idea/
+*.iml
+.DS_Store
+
+# Local Maven output and reports
+target/
+
+# Files not required to build the application image
+.gitattributes
+.gitignore
+mvnw.cmd
+HELP.md
+README.md
+
+# Keep only the Dockerfile from deployment assets in the build context
+deploy/*
+!deploy/Dockerfile
