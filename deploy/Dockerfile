@@ -1,10 +1,10 @@
 # syntax=docker/dockerfile:1.7
 
 # ==============================================================================
-# assignment-service - Spring Boot 4.1 / Java 25 / Maven (single module)
+# maintenance-service - Spring Boot 4.1 / Java 25 / Maven (single module)
 #
 # Build context expected from the repository root:
-#   docker build -f deploy/Dockerfile -t assignment-service .
+#   docker build -f deploy/Dockerfile -t maintenance-service .
 #
 # To run tests as part of the image build:
 #   docker build --build-arg SKIP_TESTS=false -f deploy/Dockerfile .
