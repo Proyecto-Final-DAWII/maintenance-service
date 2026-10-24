@@ -20,7 +20,7 @@ public class MaintenanceRepositoryTest {
     @Test
     public void testInsertAndFind() {
         Maintenance m = new Maintenance();
-        m.setAssetId(1L);
+        m.setAssetId("LAP-001");
         m.setMaintenanceType("Preventivo");
         m.setDescription("Revision general de equipos");
         m.setPriority("Alta");
@@ -43,7 +43,7 @@ public class MaintenanceRepositoryTest {
     @Test
     public void testUpdate() {
         Maintenance m = new Maintenance();
-        m.setAssetId(2L);
+        m.setAssetId("LAP-002");
         m.setMaintenanceType("Correctivo");
         m.setDescription("Reparacion de pantalla");
         m.setPriority("Media");
@@ -59,7 +59,7 @@ public class MaintenanceRepositoryTest {
     @Test
     public void testDelete() {
         Maintenance m = new Maintenance();
-        m.setAssetId(3L);
+        m.setAssetId("LAP-003");
         m.setMaintenanceType("Preventivo");
         m.setDescription("Limpieza interna");
         m.setPriority("Baja");

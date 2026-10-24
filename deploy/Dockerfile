@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1.7
 
 # ==============================================================================
-# maintenance-service - Spring Boot 4.1 / Java 25 / Maven (single module)
+# maintenance-service - Spring Boot 4.1 / Java 21 / Maven (single module)
 #
 # Build context expected from the repository root:
 #   docker build -f deploy/Dockerfile -t maintenance-service .
@@ -10,7 +10,7 @@
 #   docker build --build-arg SKIP_TESTS=false -f deploy/Dockerfile .
 # ==============================================================================
 
-ARG JAVA_VERSION=25
+ARG JAVA_VERSION=21
 
 # ------------------------------------------------------------------------------
 # Stage 1: Resolve dependencies, compile, package and extract Spring Boot layers
@@ -76,7 +76,7 @@ USER 10001:10001
 # application.properties does not override server.port, so Spring Boot uses 8080.
 EXPOSE 8080
 
-# Java 25 is container-aware. Percentages adapt the heap to the memory limit
+# Java 21 is container-aware. Percentages adapt the heap to the memory limit
 # assigned by Docker/Kubernetes without hardcoding -Xms or -Xmx.
 ENV JAVA_TOOL_OPTIONS="-XX:InitialRAMPercentage=25.0 -XX:MaxRAMPercentage=75.0 -XX:+ExitOnOutOfMemoryError"
 

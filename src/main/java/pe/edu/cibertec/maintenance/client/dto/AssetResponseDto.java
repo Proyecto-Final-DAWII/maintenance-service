@@ -1,27 +1,27 @@
 package pe.edu.cibertec.maintenance.client.dto;
 
 public class AssetResponseDto {
-    private Long id;
-    private String assetName;
+    private String id;
+    private String name;
     private String serialNumber;
     private String status;
 
     public AssetResponseDto() {}
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public String getAssetName() {
-        return assetName;
+    public String getName() {
+        return name;
     }
 
-    public void setAssetName(String assetName) {
-        this.assetName = assetName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getSerialNumber() {

@@ -10,5 +10,6 @@ public interface MaintenanceService {
     MaintenanceResponseDto findMaintenanceById(Long id);
     MaintenanceResponseDto createMaintenance(MaintenanceRequestDto requestDto);
     MaintenanceResponseDto updateMaintenance(Long id, MaintenanceRequestDto requestDto);
+    MaintenanceResponseDto completeMaintenance(Long id);
     void deleteMaintenance(Long id);
 }

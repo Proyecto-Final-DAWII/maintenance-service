@@ -1,5 +1,6 @@
 package pe.edu.cibertec.maintenance.controller;
 
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,7 +11,7 @@ import pe.edu.cibertec.maintenance.service.MaintenanceService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/maintenances")
+@RequestMapping({"/api/maintenances", "/api/v1/maintenance"})
 public class MaintenanceController {
 
     private final MaintenanceService maintenanceService;
@@ -32,7 +33,7 @@ public class MaintenanceController {
     }
 
     @PostMapping
-    public ResponseEntity<MaintenanceResponseDto> createMaintenance(@RequestBody MaintenanceRequestDto requestDto) {
+    public ResponseEntity<MaintenanceResponseDto> createMaintenance(@Valid @RequestBody MaintenanceRequestDto requestDto) {
         MaintenanceResponseDto created = maintenanceService.createMaintenance(requestDto);
         return new ResponseEntity<>(created, HttpStatus.CREATED);
     }
@@ -40,9 +41,15 @@ public class MaintenanceController {
     @PutMapping("/{id}")
     public ResponseEntity<MaintenanceResponseDto> updateMaintenance(
             @PathVariable Long id,
-            @RequestBody MaintenanceRequestDto requestDto) {
+            @Valid @RequestBody MaintenanceRequestDto requestDto) {
         MaintenanceResponseDto updated = maintenanceService.updateMaintenance(id, requestDto);
         return ResponseEntity.ok(updated);
+    }
+
+    @RequestMapping(value = "/{id}/complete", method = {RequestMethod.POST, RequestMethod.PUT})
+    public ResponseEntity<MaintenanceResponseDto> completeMaintenance(@PathVariable Long id) {
+        MaintenanceResponseDto completed = maintenanceService.completeMaintenance(id);
+        return ResponseEntity.ok(completed);
     }
 
     @DeleteMapping("/{id}")

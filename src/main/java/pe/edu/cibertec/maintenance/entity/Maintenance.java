@@ -11,7 +11,7 @@ public class Maintenance {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Long assetId;
+    private String assetId;
     private String maintenanceType;
     private String description;
     private String priority;
@@ -23,8 +23,8 @@ public class Maintenance {
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
-    public Long getAssetId() { return assetId; }
-    public void setAssetId(Long assetId) { this.assetId = assetId; }
+    public String getAssetId() { return assetId; }
+    public void setAssetId(String assetId) { this.assetId = assetId; }
 
     public String getMaintenanceType() { return maintenanceType; }
     public void setMaintenanceType(String maintenanceType) { this.maintenanceType = maintenanceType; }

@@ -1,24 +1,31 @@
 package pe.edu.cibertec.maintenance.dto.request;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 public class MaintenanceRequestDto {
 
-    private Long assetId;
+    @NotBlank
+    private String assetId;
+    @NotBlank
     private String maintenanceType;
+    @NotBlank
     private String description;
+    @NotBlank
     private String priority;
+    @NotNull
     private LocalDate startDate;
     private String status;
 
     public MaintenanceRequestDto() {
     }
 
-    public Long getAssetId() {
+    public String getAssetId() {
         return assetId;
     }
 
-    public void setAssetId(Long assetId) {
+    public void setAssetId(String assetId) {
         this.assetId = assetId;
     }
 

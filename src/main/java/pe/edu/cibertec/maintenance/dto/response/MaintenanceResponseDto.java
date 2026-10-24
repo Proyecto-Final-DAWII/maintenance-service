@@ -6,7 +6,7 @@ import java.time.LocalDate;
 public class MaintenanceResponseDto extends BaseResponseDto {
 
     private Long id;
-    private Long assetId;
+    private String assetId;
     private String maintenanceType;
     private String description;
     private String priority;
@@ -25,11 +25,11 @@ public class MaintenanceResponseDto extends BaseResponseDto {
         this.id = id;
     }
 
-    public Long getAssetId() {
+    public String getAssetId() {
         return assetId;
     }
 
-    public void setAssetId(Long assetId) {
+    public void setAssetId(String assetId) {
         this.assetId = assetId;
     }
 
